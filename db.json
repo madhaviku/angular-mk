@@ -1,1 +1,14 @@
-{}
+{
+  "posts": [
+    {
+      "cardNumber": 1234 4567 5678 6789,
+      "cardName": "XXXX",
+      "expiryDate":"00/00/0000",
+      "code":"000",
+      "amount":"XXXX"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
