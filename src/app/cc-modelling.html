@@ -1,0 +1,35 @@
+<mat-card>
+  <p>Credit card details</p>
+  <form>
+    <mat-form-field class="cc-container">
+      <mat-label>Credit card number</mat-label>
+      <input matInput required />
+    </mat-form-field>
+
+    <mat-form-field class="cc-container">
+      <mat-label>Card holder</mat-label>
+      <input matInput required />
+    </mat-form-field>
+
+    <mat-form-field class="cc-container">
+      <mat-label>Expiration Date</mat-label>
+      <input matInput [matDatepicker]="picker" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="cc-container">
+      <mat-label>Security code</mat-label>
+      <input matInput placeholder="CCV" maxlength="3"/>
+    </mat-form-field>
+
+    <mat-form-field class="cc-container">
+      <mat-label>Amount</mat-label>
+      <input matInput required />
+    </mat-form-field>
+    <div class="float-right">
+      <button mat-button >Clear </button>
+      <button mat-button >Submit </button>
+    </div>
+  </form>
+</mat-card>
