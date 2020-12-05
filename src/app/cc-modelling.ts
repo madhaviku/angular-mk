@@ -14,7 +14,7 @@ export class CcModelling {
   securityCode: string;
   amount: string;
 
-  constructor( private cardService: CardService) {}
+  constructor(private cardService: CardService) {}
 
   submitData() {
     const paymentData = {
@@ -25,9 +25,5 @@ export class CcModelling {
       amount: this.amount
     };
     this.cardService.setpayment(paymentData);
-  }
-
-  viewDetails(){
-    this.router.navigate(['/details']);
   }
 }
