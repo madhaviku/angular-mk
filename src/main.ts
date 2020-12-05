@@ -2,7 +2,7 @@ import './polyfills';
 
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
@@ -23,14 +23,12 @@ import {CcModelling} from './app/cc-modelling';
     HttpClientModule,
     DemoMaterialModule,
     MatNativeDateModule,
-    ReactiveFormsModule,
+    
   ],
   entryComponents: [CcModelling],
   declarations: [CcModelling],
   bootstrap: [CcModelling],
-  providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },CardService
-  ]
+  providers: [CardService]
 })
 export class AppModule {}
 

@@ -1,42 +1,29 @@
-import {Component} from '@angular/core';
-import {CardService} from './card.service';
+import { Component } from "@angular/core";
+import { CardService } from "./card.service";
+
 /** @title Simple form field */
 @Component({
-  selector: 'cc-modelling',
-  templateUrl: 'cc-modelling.html',
-  styleUrls: ['./cc-modelling.css'],
+  selector: "cc-modelling",
+  templateUrl: "cc-modelling.html",
+  styleUrls: ["./cc-modelling.css"]
 })
 export class CcModelling {
-  card_number = '';
-  card_name = '';
-  expiry_date = '';
-  security = '';
-  amount = '';
+  cardNumber: string;
+  cardName: string;
+  expiry: string;
+  securityCode: string;
+  amount: string;
 
-  constructor(private readonly service : CardService){}
+  constructor(private cardService: CardService) {}
 
-submitData(){
-  const paymentData = {
-    cardNumber : this.card_number,
-    cardName : this.card_name,
-    expiry : this.expiry_date,
-    securityCode : this.security,
-    amount : this.amount
-  };
-  this.service.getpaymentDetails({
-    cardNumber : this.card_number,
-    cardName: this.card_name,
-    expiryDate : this.expiry_date,
-    securityCode : this.security,
-    amount: this.amount,
-  });
-
-  
+  submitData() {
+    const paymentData = {
+      cardNumber: this.cardNumber,
+      cardName: this.cardName,
+      expiry: this.expiry,
+      securityCode: this.securityCode,
+      amount: this.amount
+    };
+    this.cardService.setpayment(paymentData);
+  }
 }
-
-}
-
-
-/**  Copyright 2020 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */

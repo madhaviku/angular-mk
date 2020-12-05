@@ -1,25 +1,26 @@
 <mat-card>
+  <div class="formContainer">
 	<p>Credit card details</p>
 	<mat-form-field class="cc-container">
 		<mat-label>Credit card number</mat-label>
-		<input matInput [(ngModel)]="card_number" required />
+		<input matInput [(ngModel)]="cardNumber" required />
     </mat-form-field>
 
 		<mat-form-field class="cc-container">
 			<mat-label>Card holder</mat-label>
-			<input matInput [(ngModel)]="card_name" required />
+			<input matInput [(ngModel)]="cardName" required />
     </mat-form-field>
 
 			<mat-form-field class="cc-container">
 				<mat-label>Expiration Date</mat-label>
-				<input matInput [matDatepicker]="picker" [(ngModel)]="expiry_date" required />
+				<input matInput [matDatepicker]="picker" [(ngModel)]="expiry" required />
 				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 				<mat-datepicker touchUi #picker></mat-datepicker>
 			</mat-form-field>
 
 			<mat-form-field class="cc-container">
 				<mat-label>Security code</mat-label>
-				<input matInput placeholder="CCV" [(ngModel)]="security" maxlength="3"/>
+				<input matInput placeholder="CCV" [(ngModel)]="securityCode" maxlength="3"/>
     </mat-form-field>
 
 				<mat-form-field class="cc-container">
@@ -30,4 +31,5 @@
 						<button mat-button >Clear </button>
 						<button mat-raised-button color="primary" (click)="submitData()">Submit </button>
 					</div>
+  </div>
 </mat-card>
