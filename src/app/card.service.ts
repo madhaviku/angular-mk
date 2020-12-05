@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { Observable } from "rxjs/Observable";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Injectable()
 export class CardService {
+  constructor(private readonly snackbar: MatSnackBar) {}
   private cardDetails = new BehaviorSubject<any>([
     {
       cardNumber: "0000 0000 0000 0000",
@@ -15,6 +17,7 @@ export class CardService {
   ]);
 
   setpayment(data: any) {
+    this.snackbar.open("Payment completed successfully!", "Dismiss");
     this.cardDetails.next([data]);
   }
 
