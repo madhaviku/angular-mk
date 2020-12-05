@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { CardService } from "./card.service";
+import { Router } from "@angular/router";
 
 /** @title Simple form field */
 @Component({
@@ -14,7 +15,10 @@ export class CcModelling {
   securiyCode: string;
   amount: string;
 
-  constructor(private cardService: CardService) {}
+  constructor(
+    private cardService: CardService,
+    private readonly router: Router
+  ) {}
 
   submitData() {
     const paymentData = {
@@ -25,5 +29,9 @@ export class CcModelling {
       amount: this.amount
     };
     this.cardService.setpayment(paymentData);
+  }
+
+  viewDetails() {
+    this.router.navigate(["/cc-details"]);
   }
 }

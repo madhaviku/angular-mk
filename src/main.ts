@@ -9,9 +9,10 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DemoMaterialModule } from "./app/material-module";
 import { CcDetailsComponent } from "./app/cc-details/cc-details.component";
+import { CcRequestComponent } from "./app/cc-request/cc-request.component";
 import { CardService } from "./app/card.service";
 import { CcModelling } from "./app/cc-modelling";
-
+import { AppRoutingModule } from "./app/app-routing.module";
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -23,12 +24,12 @@ import { CcModelling } from "./app/cc-modelling";
     FormsModule,
     HttpClientModule,
     DemoMaterialModule,
-    MatNativeDateModule
+    MatNativeDateModule, AppRoutingModule
   ],
-  entryComponents: [CcModelling, CcDetailsComponent,],
-  declarations: [CcModelling, CcDetailsComponent],
+  entryComponents: [CcModelling,CcRequestComponent, CcDetailsComponent],
+  declarations: [CcModelling,CcRequestComponent, CcDetailsComponent],
   bootstrap: [CcModelling],
-  providers: [CardService,]
+  providers: [CardService]
 })
 export class AppModule {}
 
