@@ -1,16 +1,16 @@
-import './polyfills';
+import "./polyfills";
 
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DemoMaterialModule} from './app/material-module';
-import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-import {CardService} from './app/card.service';
-import {CcModelling} from './app/cc-modelling';
+import { HttpClientModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { MatNativeDateModule } from "@angular/material/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DemoMaterialModule } from "./app/material-module";
+import { CcDetailsComponent } from "./app/cc-details/cc-details.component";
+import { CardService } from "./app/card.service";
+import { CcModelling } from "./app/cc-modelling";
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -22,19 +22,18 @@ import {CcModelling} from './app/cc-modelling';
     FormsModule,
     HttpClientModule,
     DemoMaterialModule,
-    MatNativeDateModule,
-    
+    MatNativeDateModule
   ],
-  entryComponents: [CcModelling],
-  declarations: [CcModelling],
+  entryComponents: [CcModelling, CcDetailsComponent],
+  declarations: [CcModelling, CcDetailsComponent],
   bootstrap: [CcModelling],
   providers: [CardService]
 })
 export class AppModule {}
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
   .catch(err => console.error(err));
-
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
