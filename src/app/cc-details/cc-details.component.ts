@@ -18,9 +18,6 @@ export class CcDetailsComponent implements OnInit {
   ngOnInit() {
     this.cardService.getpayment().subscribe((response: any) => {
       this.creditDetails = response;
-      // this.creditDetails.forEach((subList)=>{
-      //   subList.dates = subList.expiry.split(',');
-      // })
     });
   }
 }

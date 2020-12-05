@@ -15,7 +15,6 @@ export class CardService {
   ]);
 
   setpayment(data: any) {
-    console.log("set", data);
     this.cardDetails.next([data]);
   }
 
