@@ -9,7 +9,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-
+import {CardService} from './app/card.service';
 import {CcModelling} from './app/cc-modelling';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
@@ -28,7 +28,7 @@ import {CcModelling} from './app/cc-modelling';
   entryComponents: [CcModelling],
   declarations: [CcModelling],
   bootstrap: [CcModelling],
-  providers: [
+  providers: [CardService,
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ]
 })
