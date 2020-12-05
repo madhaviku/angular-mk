@@ -18,8 +18,9 @@ export class CcDetailsComponent implements OnInit {
   ngOnInit() {
     this.cardService.getpayment().subscribe((response: any) => {
       this.creditDetails = response;
-      console.log("get payment", this.creditDetails);
-      this.dataSource = new MatTableDataSource(response);
+      // this.creditDetails.forEach((subList)=>{
+      //   subList.dates = subList.expiry.split(',');
+      // })
     });
   }
 }

@@ -10,8 +10,8 @@ import { CardService } from "./card.service";
 export class CcModelling {
   cardNumber: string;
   cardName: string;
-  expiry: string;
-  securityCode: string;
+  expiryDate: string;
+  securiyCode: string;
   amount: string;
 
   constructor(private cardService: CardService) {}
@@ -20,8 +20,8 @@ export class CcModelling {
     const paymentData = {
       cardNumber: this.cardNumber,
       cardName: this.cardName,
-      expiry: this.expiry,
-      securityCode: this.securityCode,
+      expiryDate: this.expiryDate,
+      securiyCode: this.securiyCode,
       amount: this.amount
     };
     this.cardService.setpayment(paymentData);

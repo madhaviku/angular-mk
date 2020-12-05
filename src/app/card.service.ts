@@ -8,14 +8,14 @@ export class CardService {
   private cardDetails = new BehaviorSubject<any>([{
     cardNumber: '0000 0000 0000 0000',
     cardName: 'madhavi@xyz.com',
-    expiryDate: '2022 November ',
+    expiryDate: 'Fri Dec 18 2020 00:00:00 GMT+0530 (India Standard Time)',
     securiyCode: '000',
     amount: 'XXX'
   }]);
 
   setpayment(data:any) {
     console.log('set',data)
-    this.cardDetails.next(data);
+    this.cardDetails.next([data]);
   }
 
   getpayment() {
