@@ -1,4 +1,4 @@
-
-<button mat-button><a routerLink="/modelling">Make Payment</a></button>
-<button mat-button><a routerLink="/cc-details">View CC details</a></button>
+<button mat-button matTooltip="Click to make payment!" (click)="makePayment()">Make Payment</button>
+<button mat-button matTooltip="Click to view payment details!" (click)="seeDetails()">View CC details</button>
+<hr>
 <router-outlet></router-outlet>

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import {Router} from '@angular/router';
 
 /** @title Simple form field */
 @Component({
@@ -6,4 +7,13 @@ import { Component } from "@angular/core";
   templateUrl: "cc-modelling.html",
   styleUrls: ["./cc-modelling.css"]
 })
-export class CcModelling {}
+export class CcModelling {
+  constructor(private readonly router: Router,){}
+  makePayment(){
+    this.router.navigate(['/modelling']);
+  }
+
+  seeDetails(){
+    this.router.navigate(['/cc-details']);
+  }
+}
