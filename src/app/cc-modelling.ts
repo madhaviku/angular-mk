@@ -13,7 +13,7 @@ export class CcModelling {
   security = '';
   amount = '';
 
-  constructor(private readonly service:CardService){}
+  constructor(private readonly service : CardService){}
 
 submitData(){
   const paymentData = {
@@ -23,9 +23,13 @@ submitData(){
     securityCode : this.security,
     amount : this.amount
   };
-  this.service.paymentDetails(paymentData).subscribe(response => {
-      
-  })
+  this.service.getpaymentDetails({
+    cardNumber : this.card_number,
+    cardName: this.card_name,
+    expiryDate : this.expiry_date,
+    securityCode : this.security,
+    amount: this.amount,
+  });
 
   
 }

@@ -28,8 +28,8 @@ import {CcModelling} from './app/cc-modelling';
   entryComponents: [CcModelling],
   declarations: [CcModelling],
   bootstrap: [CcModelling],
-  providers: [CardService,
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },CardService
   ]
 })
 export class AppModule {}
