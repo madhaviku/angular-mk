@@ -1,4 +1,3 @@
-<router-outlet></router-outlet>
 <mat-card>
 	<div class="formContainer">
 		<p>Credit card details</p>
@@ -28,10 +27,10 @@
 						<mat-label>Amount</mat-label>
 						<input matInput [(ngModel)]="amount" required />
     </mat-form-field>
-						<div class="float-right">
-							<button mat-button >Clear </button>
-							<button mat-raised-button color="primary" (click)="submitData()">Submit </button>
-						</div>
+		<div class="float-right">
+					<button mat-button >Clear </button>
+					<button mat-raised-button color="primary" (click)="submitData()" [disabled]="!cardNumber || !cardName ||!expiryDate || !securiyCode || !amount">Submit </button>
+		</div>
 	</div>
 </mat-card>
 <div>
